@@ -42,11 +42,15 @@ recvThread.start()
 
 
 # CREATE FUNCTIONS HERE....
+# Square Funciton
+def square():
+    for i in range(4):
+        sendmsg("forward 100") #Drone will go forward 100cm
+        sendmsg("ccw 90") #Drone will turn counter clockwise 90 Degrees
 
-
-print("\nFirst & Last Names")
-print("Program Name: ")
-print("Date: ")
+print("\nTrenton Weller")
+print("Program TelloTrainingLab, Sqaure Function: ")
+print("2.25.20: ")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -59,8 +63,7 @@ try:
         sendmsg('command', 0)
         sendmsg('takeoff')
 
-        # Review the (SDK) Software Development Kit resource for Drone Commands
-        # Delete these comments before writing your program
+        square() #calling function square
 
         sendmsg('land')
 
