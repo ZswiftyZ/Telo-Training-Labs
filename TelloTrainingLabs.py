@@ -44,6 +44,7 @@ recvThread.start()
 # CREATE FUNCTIONS HERE....
 # Square Funciton
 def triangle():
+    sendmsg("up 50")
     for i in range(3):
         sendmsg("forward 100")
         sendmsg("ccw 120")
@@ -65,9 +66,9 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
-
-        square() #calling function square
+        sendmsg('takeoff', 8)
+        triangle()
+        #square() #calling function square
 
         sendmsg('land')
 
