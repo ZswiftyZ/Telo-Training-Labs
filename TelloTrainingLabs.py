@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 6):
+def sendmsg(msg, sleep =4):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -43,6 +43,10 @@ recvThread.start()
 
 # CREATE FUNCTIONS HERE....
 # Square Funciton
+def triangle():
+    for i in range(3):
+        sendmsg("forward 100")
+        sendmsg("ccw 120")
 def square():
     for i in range(4):
         sendmsg("forward 100") #Drone will go forward 100cm
